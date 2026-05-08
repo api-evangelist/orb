@@ -27,6 +27,8 @@ apis:
         url: https://docs.withorb.com/
       - type: Getting Started
         url: https://docs.withorb.com/
+      - url: openapi/orb-openapi.yml
+        type: OpenAPI
 common:
   - type: Website
     url: https://www.withorb.com/
