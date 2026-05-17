@@ -25,7 +25,7 @@ apis:
     properties:
       - type: Documentation
         url: https://docs.withorb.com/
-      - type: Getting Started
+      - type: GettingStarted
         url: https://docs.withorb.com/
       - url: openapi/orb-openapi.yml
         type: OpenAPI
