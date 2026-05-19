@@ -1,0 +1,592 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Orb API
+  description: 'Orb API. 14 operations. Lead operation: List alerts. Self-contained Naftiko capability covering one Orb business
+    surface.'
+  tags:
+  - Orb
+  - Orb API
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORB_API_KEY: ORB_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: orb
+    baseUri: https://api.withorb.com/v1
+    description: Orb API business capability. Self-contained, no shared references.
+    resources:
+    - name: alerts
+      path: /alerts
+      operations:
+      - name: listalerts
+        method: GET
+        description: List alerts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: alerts-customer
+      path: /alerts/customer
+      operations:
+      - name: createcustomeralert
+        method: POST
+        description: Create a customer-level alert
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: alerts-subscription
+      path: /alerts/subscription
+      operations:
+      - name: createsubscriptionalert
+        method: POST
+        description: Create a subscription-level alert
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: availability
+      path: /availability
+      operations:
+      - name: checkavailability
+        method: GET
+        description: Test connection to the Orb API and check API key validity
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: coupons
+      path: /coupons
+      operations:
+      - name: createcoupon
+        method: POST
+        description: Create a coupon
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: credit_notes
+      path: /credit_notes
+      operations:
+      - name: createcreditnote
+        method: POST
+        description: Create a credit note
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: customers
+      path: /customers
+      operations:
+      - name: createcustomer
+        method: POST
+        description: Create a customer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: customers-id-balance_transactions
+      path: /customers/{id}/balance_transactions
+      operations:
+      - name: createbalancetransaction
+        method: POST
+        description: Create an immutable balance transaction for a customer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: events-ingest
+      path: /events/ingest
+      operations:
+      - name: ingestevents
+        method: POST
+        description: Ingest events for usage-based billing
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: invoices
+      path: /invoices
+      operations:
+      - name: createinvoice
+        method: POST
+        description: Create a one-off invoice for a customer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: plans
+      path: /plans
+      operations:
+      - name: createplan
+        method: POST
+        description: Create a plan with prices
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: prices-evaluate
+      path: /prices/evaluate
+      operations:
+      - name: evaluateprices
+        method: POST
+        description: Evaluate price output for a customer over a time range
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: subscriptions
+      path: /subscriptions
+      operations:
+      - name: createsubscription
+        method: POST
+        description: Create a subscription
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: subscriptions-id-usage
+      path: /subscriptions/{id}/usage
+      operations:
+      - name: getsubscriptionusage
+        method: GET
+        description: Fetch subscription usage
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: orb-rest
+    port: 8080
+    description: REST adapter for Orb API. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/alerts
+      name: alerts
+      description: REST surface for alerts.
+      operations:
+      - method: GET
+        name: listalerts
+        description: List alerts
+        call: orb.listalerts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/alerts/customer
+      name: alerts-customer
+      description: REST surface for alerts-customer.
+      operations:
+      - method: POST
+        name: createcustomeralert
+        description: Create a customer-level alert
+        call: orb.createcustomeralert
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/alerts/subscription
+      name: alerts-subscription
+      description: REST surface for alerts-subscription.
+      operations:
+      - method: POST
+        name: createsubscriptionalert
+        description: Create a subscription-level alert
+        call: orb.createsubscriptionalert
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/availability
+      name: availability
+      description: REST surface for availability.
+      operations:
+      - method: GET
+        name: checkavailability
+        description: Test connection to the Orb API and check API key validity
+        call: orb.checkavailability
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/coupons
+      name: coupons
+      description: REST surface for coupons.
+      operations:
+      - method: POST
+        name: createcoupon
+        description: Create a coupon
+        call: orb.createcoupon
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/credit-notes
+      name: credit-notes
+      description: REST surface for credit_notes.
+      operations:
+      - method: POST
+        name: createcreditnote
+        description: Create a credit note
+        call: orb.createcreditnote
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/customers
+      name: customers
+      description: REST surface for customers.
+      operations:
+      - method: POST
+        name: createcustomer
+        description: Create a customer
+        call: orb.createcustomer
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/customers/{id}/balance-transactions
+      name: customers-id-balance-transactions
+      description: REST surface for customers-id-balance_transactions.
+      operations:
+      - method: POST
+        name: createbalancetransaction
+        description: Create an immutable balance transaction for a customer
+        call: orb.createbalancetransaction
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/events/ingest
+      name: events-ingest
+      description: REST surface for events-ingest.
+      operations:
+      - method: POST
+        name: ingestevents
+        description: Ingest events for usage-based billing
+        call: orb.ingestevents
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/invoices
+      name: invoices
+      description: REST surface for invoices.
+      operations:
+      - method: POST
+        name: createinvoice
+        description: Create a one-off invoice for a customer
+        call: orb.createinvoice
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/plans
+      name: plans
+      description: REST surface for plans.
+      operations:
+      - method: POST
+        name: createplan
+        description: Create a plan with prices
+        call: orb.createplan
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/prices/evaluate
+      name: prices-evaluate
+      description: REST surface for prices-evaluate.
+      operations:
+      - method: POST
+        name: evaluateprices
+        description: Evaluate price output for a customer over a time range
+        call: orb.evaluateprices
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions
+      name: subscriptions
+      description: REST surface for subscriptions.
+      operations:
+      - method: POST
+        name: createsubscription
+        description: Create a subscription
+        call: orb.createsubscription
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{id}/usage
+      name: subscriptions-id-usage
+      description: REST surface for subscriptions-id-usage.
+      operations:
+      - method: GET
+        name: getsubscriptionusage
+        description: Fetch subscription usage
+        call: orb.getsubscriptionusage
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: orb-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Orb API. One tool per consumed operation, routed inline through this capability's consumes
+      block.
+    tools:
+    - name: list-alerts
+      description: List alerts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: orb.listalerts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-customer-level-alert
+      description: Create a customer-level alert
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: orb.createcustomeralert
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-subscription-level-alert
+      description: Create a subscription-level alert
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: orb.createsubscriptionalert
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: test-connection-orb-api-and
+      description: Test connection to the Orb API and check API key validity
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: orb.checkavailability
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-coupon
+      description: Create a coupon
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: orb.createcoupon
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-credit-note
+      description: Create a credit note
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: orb.createcreditnote
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-customer
+      description: Create a customer
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: orb.createcustomer
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-immutable-balance-transaction-customer
+      description: Create an immutable balance transaction for a customer
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: orb.createbalancetransaction
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ingest-events-usage-based-billing
+      description: Ingest events for usage-based billing
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: orb.ingestevents
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-one-off-invoice-customer
+      description: Create a one-off invoice for a customer
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: orb.createinvoice
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-plan-prices
+      description: Create a plan with prices
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: orb.createplan
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: evaluate-price-output-customer-over
+      description: Evaluate price output for a customer over a time range
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: orb.evaluateprices
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-subscription
+      description: Create a subscription
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: orb.createsubscription
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: fetch-subscription-usage
+      description: Fetch subscription usage
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: orb.getsubscriptionusage
+      outputParameters:
+      - type: object
+        mapping: $.
