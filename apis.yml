@@ -1,6 +1,7 @@
 aid: orb
 name: Orb
-description: Orb is a billing infrastructure platform providing usage-based pricing, metering, and invoicing for API and cloud
+description: >-
+  Orb is a billing infrastructure platform providing usage-based pricing, metering, and invoicing for API and cloud
   products.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
@@ -14,20 +15,19 @@ specificationVersion: '0.19'
 apis:
   - aid: orb:orb
     name: Orb
-    description: Orb is a billing infrastructure platform providing usage-based pricing, metering, and invoicing for API and
-      cloud products.
+    description: >-
+      Orb is a billing infrastructure platform providing usage-based pricing, metering, and invoicing for API and cloud
+      products.
     humanURL: https://www.withorb.com/
     tags:
-    - FinOps
+      - FinOps
     properties:
-    - type: Documentation
-      url: https://docs.withorb.com/
-    - type: GettingStarted
-      url: https://docs.withorb.com/
-    - url: openapi/orb-openapi.yml
-      type: OpenAPI
-    - type: NaftikoCapability
-      url: capabilities/orb.yaml
+      - type: Documentation
+        url: https://docs.withorb.com/
+      - type: GettingStarted
+        url: https://docs.withorb.com/
+      - url: openapi/orb-openapi.yml
+        type: OpenAPI
 common:
   - type: GitHubOrganization
     url: https://github.com/orbcorp

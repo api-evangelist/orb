@@ -1,0 +1,222 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Orb API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Test connection to the Orb API and check API key validity",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.withorb.com/v1/availability"
+      },
+      "docs": "Test connection to the Orb API and check API key validity"
+    },
+    {
+      "info": {
+        "name": "List alerts",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.withorb.com/v1/alerts"
+      },
+      "docs": "List alerts"
+    },
+    {
+      "info": {
+        "name": "Create a customer-level alert",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.withorb.com/v1/alerts/customer",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a customer-level alert"
+    },
+    {
+      "info": {
+        "name": "Create a subscription-level alert",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.withorb.com/v1/alerts/subscription",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a subscription-level alert"
+    },
+    {
+      "info": {
+        "name": "Create a coupon",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.withorb.com/v1/coupons",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a coupon"
+    },
+    {
+      "info": {
+        "name": "Create a credit note",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.withorb.com/v1/credit_notes",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a credit note"
+    },
+    {
+      "info": {
+        "name": "Create a customer",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.withorb.com/v1/customers",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a customer"
+    },
+    {
+      "info": {
+        "name": "Create an immutable balance transaction for a customer",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.withorb.com/v1/customers/:id/balance_transactions",
+        "params": [
+          {
+            "name": "id",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create an immutable balance transaction for a customer"
+    },
+    {
+      "info": {
+        "name": "Ingest events for usage-based billing",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.withorb.com/v1/events/ingest",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Ingest events for usage-based billing"
+    },
+    {
+      "info": {
+        "name": "Create a one-off invoice for a customer",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.withorb.com/v1/invoices",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a one-off invoice for a customer"
+    },
+    {
+      "info": {
+        "name": "Create a plan with prices",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.withorb.com/v1/plans",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a plan with prices"
+    },
+    {
+      "info": {
+        "name": "Evaluate price output for a customer over a time range",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.withorb.com/v1/prices/evaluate",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Evaluate price output for a customer over a time range"
+    },
+    {
+      "info": {
+        "name": "Create a subscription",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.withorb.com/v1/subscriptions",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a subscription"
+    },
+    {
+      "info": {
+        "name": "Fetch subscription usage",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.withorb.com/v1/subscriptions/:id/usage",
+        "params": [
+          {
+            "name": "id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Fetch subscription usage"
+    }
+  ],
+  "bundled": true
+}
