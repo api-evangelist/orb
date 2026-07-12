@@ -29,6 +29,12 @@ apis:
       - url: openapi/orb-openapi.yml
         type: OpenAPI
 common:
+  - type: TrustCenter
+    url: security/orb-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/orb-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/orb-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/orbcorp
   - type: LinkedIn
