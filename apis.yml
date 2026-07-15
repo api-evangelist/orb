@@ -29,6 +29,8 @@ apis:
       - url: openapi/orb-openapi.yml
         type: OpenAPI
 common:
+  - type: AgenticAccess
+    url: agentic-access/orb-agentic-access.yml
   - type: TrustCenter
     url: security/orb-trust-center.yml
   - type: VulnerabilityDisclosure
