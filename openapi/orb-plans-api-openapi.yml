@@ -1,0 +1,41 @@
+openapi: 3.1.0
+info:
+  title: Orb Alerts Plans API
+  description: Orb is a billing platform for usage-based pricing. The API supports customers, plans, subscriptions, invoices, alerts, coupons, credit notes, and event ingestion.
+  version: '1.0'
+servers:
+- url: https://api.withorb.com/v1
+  description: Orb API
+tags:
+- name: Plans
+paths:
+  /plans:
+    post:
+      summary: Create a plan with prices
+      operationId: createPlan
+      requestBody:
+        $ref: '#/components/requestBodies/Generic'
+      responses:
+        '200':
+          $ref: '#/components/responses/Generic'
+      tags:
+      - Plans
+components:
+  responses:
+    Generic:
+      description: Successful response
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: true
+  requestBodies:
+    Generic:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: true
+x-generated-from: https://docs.withorb.com/llms.txt
+x-generated-by: claude-crawl-2026-05-08
