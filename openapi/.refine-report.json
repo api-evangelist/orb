@@ -1,0 +1,32 @@
+{
+  "provider": "orb",
+  "sources": [
+    "orb-alerts-api-openapi.yml",
+    "orb-availability-api-openapi.yml",
+    "orb-coupons-api-openapi.yml",
+    "orb-credit-notes-api-openapi.yml",
+    "orb-customers-api-openapi.yml",
+    "orb-events-api-openapi.yml",
+    "orb-invoices-api-openapi.yml",
+    "orb-plans-api-openapi.yml",
+    "orb-prices-api-openapi.yml",
+    "orb-subscriptions-api-openapi.yml"
+  ],
+  "outputs": [
+    "orb-alerts-api-openapi.yml",
+    "orb-availability-api-openapi.yml",
+    "orb-coupons-api-openapi.yml",
+    "orb-credit-notes-api-openapi.yml",
+    "orb-customers-api-openapi.yml",
+    "orb-events-api-openapi.yml",
+    "orb-invoices-api-openapi.yml",
+    "orb-plans-api-openapi.yml",
+    "orb-prices-api-openapi.yml",
+    "orb-subscriptions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
