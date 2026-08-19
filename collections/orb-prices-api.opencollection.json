@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Orb Alerts Prices API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Prices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Evaluate price output for a customer over a time range",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.withorb.com/v1/prices/evaluate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Evaluate price output for a customer over a time range"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

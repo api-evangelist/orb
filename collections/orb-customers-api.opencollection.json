@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Orb Alerts Customers API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Customers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.withorb.com/v1/customers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a customer"
+        },
+        {
+          "info": {
+            "name": "Create an immutable balance transaction for a customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.withorb.com/v1/customers/:id/balance_transactions",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an immutable balance transaction for a customer"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

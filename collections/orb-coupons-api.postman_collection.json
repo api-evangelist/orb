@@ -1,0 +1,112 @@
+{
+  "item": [
+    {
+      "id": "49eb1737-eea5-4a00-93fc-08407bd62cfa",
+      "name": "Coupons",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8f592de0-a2b5-4dd8-9998-a1f88640da3e",
+          "name": "Create a coupon",
+          "request": {
+            "name": "Create a coupon",
+            "description": {},
+            "url": {
+              "path": [
+                "coupons"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 2151.6465071953207\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3b2e1feb-ffe3-4856-9683-cd388c4b7db7",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "coupons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": 1550.003140908417,\n  \"key_1\": 2872,\n  \"key_2\": 7673\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.withorb.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "cf139405-a1f2-44c8-9ae7-335d487d09c0",
+    "name": "Orb Alerts Coupons API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Orb is a billing platform for usage-based pricing. The API supports customers, plans, subscriptions, invoices, alerts, coupons, credit notes, and event ingestion.",
+      "type": "text/plain"
+    }
+  }
+}

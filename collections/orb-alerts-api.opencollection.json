@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Orb Alerts API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Alerts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List alerts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.withorb.com/v1/alerts"
+          },
+          "docs": "List alerts"
+        },
+        {
+          "info": {
+            "name": "Create a customer-level alert",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.withorb.com/v1/alerts/customer",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a customer-level alert"
+        },
+        {
+          "info": {
+            "name": "Create a subscription-level alert",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.withorb.com/v1/alerts/subscription",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a subscription-level alert"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

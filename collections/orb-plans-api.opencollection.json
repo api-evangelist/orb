@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Orb Alerts Plans API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Plans",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a plan with prices",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.withorb.com/v1/plans",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a plan with prices"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

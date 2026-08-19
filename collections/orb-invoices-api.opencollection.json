@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Orb Alerts Invoices API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Invoices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a one-off invoice for a customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.withorb.com/v1/invoices",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a one-off invoice for a customer"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

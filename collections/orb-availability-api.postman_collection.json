@@ -1,0 +1,99 @@
+{
+  "item": [
+    {
+      "id": "9f0ddc7a-170f-4ccf-819e-10d4cadbb59e",
+      "name": "Availability",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "658a4e92-428d-4d54-a2a3-a575dd3f3893",
+          "name": "Test connection to the Orb API and check API key validity",
+          "request": {
+            "name": "Test connection to the Orb API and check API key validity",
+            "description": {},
+            "url": {
+              "path": [
+                "availability"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c274ce0c-6c5c-45d9-8f8c-f4d91ad97ba7",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "availability"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": 4125.385094805185,\n  \"key_1\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.withorb.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "0b7588ce-a6ef-4e26-aa9b-5e9a7bf5302d",
+    "name": "Orb Alerts Availability API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Orb is a billing platform for usage-based pricing. The API supports customers, plans, subscriptions, invoices, alerts, coupons, credit notes, and event ingestion.",
+      "type": "text/plain"
+    }
+  }
+}

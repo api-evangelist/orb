@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Orb Alerts Events API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Events",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Ingest events for usage-based billing",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.withorb.com/v1/events/ingest",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Ingest events for usage-based billing"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

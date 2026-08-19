@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Orb Alerts Subscriptions API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Subscriptions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.withorb.com/v1/subscriptions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a subscription"
+        },
+        {
+          "info": {
+            "name": "Fetch subscription usage",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.withorb.com/v1/subscriptions/:id/usage",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Fetch subscription usage"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

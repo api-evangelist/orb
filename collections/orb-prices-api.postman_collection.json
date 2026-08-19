@@ -1,0 +1,114 @@
+{
+  "item": [
+    {
+      "id": "4fb455bf-89ea-4b6b-96aa-2bf0990d35af",
+      "name": "Prices",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e4e6fe1e-a38a-4cad-9fdd-35ff7f4414bb",
+          "name": "Evaluate price output for a customer over a time range",
+          "request": {
+            "name": "Evaluate price output for a customer over a time range",
+            "description": {},
+            "url": {
+              "path": [
+                "prices",
+                "evaluate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 2814.015630778205\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d60d4050-e9e8-4a31-b5ba-edc6e863cd2a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "prices",
+                    "evaluate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": 8961.448793980113,\n  \"key_1\": 3216\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.withorb.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "dc81b667-e3ee-4125-ac1e-cf53aab94718",
+    "name": "Orb Alerts Prices API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Orb is a billing platform for usage-based pricing. The API supports customers, plans, subscriptions, invoices, alerts, coupons, credit notes, and event ingestion.",
+      "type": "text/plain"
+    }
+  }
+}
