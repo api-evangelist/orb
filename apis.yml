@@ -95,6 +95,8 @@ apis:
   description: The Events API from Orb — 1 operation(s) for events.
   humanURL: https://www.withorb.com/
   tags:
+  - Event
+  tags_raw:
   - Events
   properties:
   - type: OpenAPI
@@ -147,6 +149,8 @@ apis:
   description: The Subscriptions API from Orb — 2 operation(s) for subscriptions.
   humanURL: https://www.withorb.com/
   tags:
+  - Subscription
+  tags_raw:
   - Subscriptions
   properties:
   - type: OpenAPI
